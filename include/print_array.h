@@ -28,3 +28,5 @@ void printTriangular(TwoDimensional data);
 TwoDimensional sumMatrix(TwoDimensional data1, TwoDimensional data2);
 
 TwoDimensional multMatrix(TwoDimensional data1, TwoDimensional data2);
+
+TwoDimensional TMatrix(TwoDimensional data);

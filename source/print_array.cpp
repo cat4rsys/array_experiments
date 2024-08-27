@@ -146,3 +146,24 @@ TwoDimensional multMatrix(TwoDimensional data1, TwoDimensional data2)
 
     return multData;
 }
+
+TwoDimensional TMatrix(TwoDimensional data)
+{
+    TwoDimensional tdata = {};
+
+    tdata.xsize = data.ysize;
+    tdata.ysize = data.xsize;
+
+    tdata.pointer = (int *)(calloc(tdata.xsize * tdata.ysize, sizeof(int)));
+    assert(tdata.pointer != NULL);
+
+    for (int y = 0; y < tdata.ysize; y++) {
+        for (int x = 0; x < tdata.xsize; x++) {
+            *(tdata.pointer + y * tdata.xsize + x) = *(data.pointer + x * data.xsize + y);
+        }
+    }
+
+    printf("Transposition of matrix: \n");
+
+    return tdata;
+}

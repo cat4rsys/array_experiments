@@ -28,7 +28,7 @@ int main()
     printTriangular(data4);
     free(data4.pointer);*/
 
-    TwoDimensional data5 = readTwoDimensional();
+    /*TwoDimensional data5 = readTwoDimensional();
     TwoDimensional data6 = readTwoDimensional();
 
     TwoDimensional dataSum = sumMatrix(data5, data6);
@@ -40,7 +40,14 @@ int main()
     free(dataMult.pointer);
 
     free(data5.pointer);
-    free(data6.pointer);
+    free(data6.pointer);*/
+
+    TwoDimensional data7 = readTwoDimensional();
+    TwoDimensional tdata7 = TMatrix(data7);
+    printTwoDimensionalP(tdata7);
+
+    free(data7.pointer);
+    free(tdata7.pointer);
 
     return 0;
 }
