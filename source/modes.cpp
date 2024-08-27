@@ -4,12 +4,24 @@
 #include "print_array.h"
 #include "modes.h"
 
+/**
+ * \brief Mode for transposition matrix
+ */
 static void tMode();
 
+/**
+ * \brief Prints help for my program
+ */
 static void helpMenu();
 
+/**
+ * \brief Mode for mutiplication of two matrix
+ */
 static void multMode();
 
+/**
+ * \brief Mode for summ of two matrix
+ */
 static void sumMode();
 
 void chooseMode(char * arg)

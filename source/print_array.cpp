@@ -2,8 +2,6 @@
 #include "print_array.h"
 #include <cassert>
 
-#define max(A, B) A >= B ? A : B
-
 void printOneDimensional(int data[], int size)
 {
     for( int i = 0; i < size; i++ ) {
@@ -167,3 +165,4 @@ TwoDimensional TMatrix(TwoDimensional data)
 
     return tdata;
 }
+
