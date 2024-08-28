@@ -8,3 +8,5 @@ void chooseMode(char * arg);
  * \brief Prints error of boot if it happened
  */
 void errorOfBoot();
+
+void tornMode();

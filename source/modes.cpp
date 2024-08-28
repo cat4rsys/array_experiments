@@ -38,6 +38,9 @@ void chooseMode(char * arg)
     else if ( !strcmp(arg, "t") ) {
         tMode();
     }
+    else if ( !strcmp(arg, "torn") ) {
+        tornMode();
+    }
     else {
         errorOfBoot();
     }
@@ -93,4 +96,56 @@ void tMode()
 
     free(data.pointer);
     free(tdata.pointer);
+}
+
+void tornMode()
+{
+    printf("Enter your array with torn right edge\n");
+
+    const int maxElem = 1000;
+    const int maxRows = 100;
+
+    int * elements = (int *)calloc(maxElem, sizeof(int));
+    int ** pointers = (int **)calloc(maxRows, sizeof(int *));
+
+    *(pointers) = elements;
+
+    int exit = 0;
+
+    int numOfElements = 0;
+
+    int countElements = 0;
+    int countRows = 0;
+
+    while ( exit != -1 ) {
+        printf("Enter number of elements in one row or \"-1\" if there are no more rows\n");
+
+        scanf("%d", &numOfElements);
+
+        if (numOfElements == -1) {
+            exit = -1;
+            break;
+        }
+
+        for (; numOfElements > 0; numOfElements--) {
+            scanf("%d", (elements + countElements));
+            countElements++;
+        }
+
+        countRows++;
+        *(pointers + countRows) = elements + countElements;
+    }
+
+    /*OneDimensional arr = {elements, countElements};
+    printOneDimensionalP(arr);*/
+
+    int * actPointer = elements;
+
+    for(int i = 1; i <= countRows; i++) {
+        for(; actPointer < pointers[i]; actPointer++) {
+            printf("%d ", *actPointer);
+        }
+
+        printf("\n");
+    }
 }
