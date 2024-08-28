@@ -102,7 +102,7 @@ void tornMode()
 {
     printf("Enter your array with torn right edge\n");
 
-    const int maxElem = 1000;
+    const int maxElem = 100000;
     const int maxRows = 100;
 
     int * elements = (int *)calloc(maxElem, sizeof(int));
@@ -148,4 +148,7 @@ void tornMode()
 
         printf("\n");
     }
+
+    free(elements);
+    free(pointers);
 }
